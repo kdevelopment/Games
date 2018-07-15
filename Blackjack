@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <time.h>
 using namespace std;
 
 int main() {
@@ -10,10 +11,15 @@ int x,y; //# of cards
 int money = 500;
 int a[]{2,3,4,5,6,7,8,9,10,11,12,13,14};
 int species[]{1,2,3,4};// ran out of names for type of card
-
-	
-
-int card1 = a[rand()%10];//randomizing card number
+int bet;
+int action;
+cout<<"How much would you like to bet?\n";
+cout<<"You Have "<<money<<" dollars\n";
+cin>>bet;
+money-=bet;
+cout<<"You now have "<<money<<" dollars\n";
+srand(time(NULL));
+int card1 = a[rand()%11];//randomizing card number
 x++;
 	
 		
@@ -33,9 +39,236 @@ x++;
 	            type1 = "Spades";
 			    break;					
 	        	}
-	            cout<<"You Have a  "<<a[card1]<< " of "<<type1<<endl;
-
-        
+	        	if (a[card1]==11){
+	        	   	cout<<"You Have a Jack of "<<type1<<endl;
+	        	   	card1 = 10;
+	        	}
+	        	if(a[card1]==12){
+	        	    cout<<"You Have a Queen of "<<type1<<endl;
+	        	    card1 = 10;
+	        	    }
+	        	if(a[card1]==13){
+	        	    cout<<"You Have a King of "<<type1<<endl;
+	        	    card1 = 10;
+	        	    }
+	            if(a[card1]==14){
+	        	    cout<<"You Have a Ace of "<<type1<<endl;    
+	        	    card1 = 11;
+	        	    }
+	        	else{
+	        	cout<<"You Have a  "<<a[card1]<< " of "<<type1<<endl;
+	            	}
+	 int card2 = a[rand()%11];//randomizing card number
+x++;
+		 type = species[rand()%4];
+		    switch(type){
+			    case 1: 
+	            type1 = "Spades";
+		        break;
+			    case 2: 
+	            type1 = "Clubs";
+	        	break;
+			    case 3:
+	             type1 = "Diamonds";
+	             break;
+			    case 4: 
+	            type1 = "Spades";
+			    break;					
+	        	}
+	            if (a[card2]==11){
+	        	   	cout<<"You Have a Jack of "<<type1<<endl;
+	        	   	card2 = 10;
+	        	}
+	        	if(a[card2]==12){
+	        	    cout<<"You Have a Queen of "<<type1<<endl;
+	        	    card2 = 10;
+	        	    }
+	        	if(a[card2]==13){
+	        	    cout<<"You Have a King of "<<type1<<endl;
+	        	    card2 = 10;
+	        	    }
+	            if(a[card2]==14){
+	        	    cout<<"You Have a Ace of "<<type1<<endl;
+	        	    card2=11;
+	        	    }
+	        	else{
+	        	cout<<"You Have a  "<<a[card2]<< " of "<<type1<<endl;
+	            	}
+            
+            cout<<"The Dealer has one unknown card down.\n";
+            int deal1 = a[rand()%11];//randomizing card number
+y++;
+		 type = species[rand()%4];
+		    switch(type){
+			    case 1: 
+	            type1 = "Spades";
+		        break;
+			    case 2: 
+	            type1 = "Clubs";
+	        	break;
+			    case 3:
+	             type1 = "Diamonds";
+	             break;
+			    case 4: 
+	            type1 = "Spades";
+			    break;					
+	        	}
+	            if (a[deal1]==11){
+	        	   	cout<<"The dealer has a Jack of "<<type1<<endl;
+	        	   	deal1 = 10;
+	        	}
+	        	if(a[deal1]==12){
+	        	    cout<<"The dealer has a Queen of "<<type1<<endl;
+	        	    deal1 = 10;
+	        	    }
+	        	if(a[deal1]==13){
+	        	    cout<<"The dealer has a King of "<<type1<<endl;
+	        	    deal1 = 10;
+	        	    }
+	            if(a[deal1]==14){
+	        	    cout<<"The dealer has a Ace of "<<type1<<endl;
+	        	    deal1 = 11;
+	        	    }
+	        	else{
+	        	cout<<"The dealer has a  "<<a[deal1]<< " of "<<type1<<endl;
+	            	}  
+	            	int deal2 = a[rand()%11];//randomizing card number
+y++;
+	            	if (a[deal2]==11){
+	        	   	deal2 = 10;
+	        	}
+	        	if(a[deal2]==12){
+	        	    deal2 = 10;
+	        	    }
+	        	if(a[deal2]==13){
+	        	    deal2 = 10;
+	        	    }
+	            if(a[deal2]==14){
+	        	   
+	        	    deal2 = 11;
+	        	    }
+	            	int youcardsum = a[card1] + a[card2];
+	            if (youcardsum == 21){
+	                    cout<<"You got Blackjack You Win!!!";
+	                    bet += money;
+	                    bet += money;
+	                    return 0;
+	                }
+	                	int dealercardsum = deal1 + deal2;
+	            if (dealercardsum == 21){
+	                    cout<<"The dealer got Blackjack You Lose";
+	                    return 0;
+	                }
+	                
+	               cout<<"Would you like to stand(1) or hit(2)?\n";
+	               cout<<"You have "<<youcardsum<<" card value\n";
+	               cin>>action;
+	               if(action == 1){
+	                    cout<<"The dealer has a card value of "<<dealercardsum<<endl;
+	                    if (dealercardsum<=16)  {
+	       int deal3 = a[rand()%11];//randomizing card number
+y++;
+	            	if (a[deal3]==11){
+	        	   	deal3 = 10;
+	        	}
+	        	if(a[deal3]==12){
+	        	    deal3 = 10;
+	        	    }
+	        	if(a[deal3]==13){
+	        	    deal3 = 10;
+	        	    }
+	            if(a[deal3]==14){
+	        	   
+	        	    deal3 = 11;
+	        	    }
+	        	    dealercardsum += deal3;
+	        	    if (dealercardsum > 21){
+	        	        money+=bet;
+	        	        money+=bet;
+	        	        return 0;
+	        	        }
+	            }
+	             if (dealercardsum<=16)  {
+	       int deal4 = a[rand()%11];//randomizing card number
+y++;
+	            	if (a[deal4]==11){
+	        	   	deal4 = 10;
+	        	}
+	        	if(a[deal4]==12){
+	        	    deal4 = 10;
+	        	    }
+	        	if(a[deal4]==13){
+	        	    deal4 = 10;
+	        	    }
+	            if(a[deal4]==14){
+	        	    deal4 = 11;
+	        	    }
+	        	    dealercardsum += deal4;
+	        	    if (dealercardsum > 21){
+	        	        money+=bet;
+	        	        money+=bet;
+	        	        return 0;
+	        	        }
+	            }
+	          if (action==2){
+	              int card3 = a[rand()%11];//randomizing card number
+x++;
+	            	if (a[card3]==11){
+	        	   	card3 = 10;
+	        	}
+	        	if(a[card3]==12){
+	        	    card3 = 10;
+	        	    }
+	        	if(a[card3]==13){
+	        	    card3 = 10;
+	        	    }
+	            if(a[card3]==14){
+	        	    card3 = 11;
+	        	    }
+	        	    youcardsum += card3;
+	        	    cout<<"You now have a total of "<<youcardsum<<endl;
+	        	    if(youcardsum > 21){
+	        	        return 0;
+	        	        }
+	         }  
+	         cout<<"Would you like to stand(1) or hit(2)?\n";
+	          if (action==2){
+	              int card4 = a[rand()%11];//randomizing card number
+x++;
+	            	if (a[card4]==11){
+	        	   	card4 = 10;
+	        	}
+	        	if(a[card4]==12){
+	        	    card4 = 10;
+	        	    }
+	        	if(a[card4]==13){
+	        	    card4 = 10;
+	        	    }
+	            if(a[card4]==14){
+	        	    card4 = 11;
+	        	    }
+	        	    youcardsum += card4;
+	        	    cout<<"You now have a total of "<<youcardsum<<endl;
+	        	    if(youcardsum > 21){
+	        	        return 0;
+	        	        }
+	         }
+	         if(youcardsum > dealercardsum){
+	              cout<<"Win\n";
+	             money+=bet;
+	             money+=bet;
+	             return 0;
+	             }
+	         if(youcardsum < dealercardsum){
+	              cout<<"Lose\n";
+	             return 0;
+	             }
+	         if (youcardsum == dealercardsum) {
+	             cout<<"Push\n";
+	             money+=bet;
+	             return 0;
+	             }
+	    }
 	return 0;
-
+	}
 }
