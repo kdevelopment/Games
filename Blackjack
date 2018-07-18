@@ -41,19 +41,19 @@ x++;
 	        	}
 	        	if (a[card1]==11){
 	        	   	cout<<"You Have a Jack of "<<type1<<endl;
-	        	   	card1 = 10;
+	        	   	a[card1] = 10;
 	        	}
 	        	if(a[card1]==12){
 	        	    cout<<"You Have a Queen of "<<type1<<endl;
-	        	    card1 = 10;
+	        	    a[card1] = 10;
 	        	    }
 	        	if(a[card1]==13){
 	        	    cout<<"You Have a King of "<<type1<<endl;
-	        	    card1 = 10;
+	        	    a[card1] = 10;
 	        	    }
 	            if(a[card1]==14){
 	        	    cout<<"You Have a Ace of "<<type1<<endl;    
-	        	    card1 = 11;
+	        	    a[card1] = 11;
 	        	    }
 	        	else{
 	        	cout<<"You Have a  "<<a[card1]<< " of "<<type1<<endl;
@@ -77,19 +77,19 @@ x++;
 	        	}
 	            if (a[card2]==11){
 	        	   	cout<<"You Have a Jack of "<<type1<<endl;
-	        	   	card2 = 10;
+	        	   	a[card2] = 10;
 	        	}
 	        	if(a[card2]==12){
 	        	    cout<<"You Have a Queen of "<<type1<<endl;
-	        	    card2 = 10;
+	        	    a[card2] = 10;
 	        	    }
 	        	if(a[card2]==13){
 	        	    cout<<"You Have a King of "<<type1<<endl;
-	        	    card2 = 10;
+	        	    a[card2] = 10;
 	        	    }
 	            if(a[card2]==14){
 	        	    cout<<"You Have a Ace of "<<type1<<endl;
-	        	    card2=11;
+	        	    a[card2]=11;
 	        	    }
 	        	else{
 	        	cout<<"You Have a  "<<a[card2]<< " of "<<type1<<endl;
@@ -115,19 +115,19 @@ y++;
 	        	}
 	            if (a[deal1]==11){
 	        	   	cout<<"The dealer has a Jack of "<<type1<<endl;
-	        	   	deal1 = 10;
+	        	   	a[deal1] = 10;
 	        	}
 	        	if(a[deal1]==12){
 	        	    cout<<"The dealer has a Queen of "<<type1<<endl;
-	        	    deal1 = 10;
+	        	    a[deal1] = 10;
 	        	    }
 	        	if(a[deal1]==13){
 	        	    cout<<"The dealer has a King of "<<type1<<endl;
-	        	    deal1 = 10;
+	        	    a[deal1] = 10;
 	        	    }
 	            if(a[deal1]==14){
 	        	    cout<<"The dealer has a Ace of "<<type1<<endl;
-	        	    deal1 = 11;
+	        	    a[deal1] = 11;
 	        	    }
 	        	else{
 	        	cout<<"The dealer has a  "<<a[deal1]<< " of "<<type1<<endl;
@@ -135,17 +135,17 @@ y++;
 	            	int deal2 = a[rand()%11];//randomizing card number
 y++;
 	            	if (a[deal2]==11){
-	        	   	deal2 = 10;
+	        	   	a[deal2] = 10;
 	        	}
 	        	if(a[deal2]==12){
-	        	    deal2 = 10;
+	        	    a[deal2] = 10;
 	        	    }
 	        	if(a[deal2]==13){
-	        	    deal2 = 10;
+	        	    a[deal2] = 10;
 	        	    }
 	            if(a[deal2]==14){
 	        	   
-	        	    deal2 = 11;
+	        	    a[deal2] = 11;
 	        	    }
 	            	int youcardsum = a[card1] + a[card2];
 	            if (youcardsum == 21){
@@ -169,18 +169,19 @@ y++;
 	       int deal3 = a[rand()%11];//randomizing card number
 y++;
 	            	if (a[deal3]==11){
-	        	   	deal3 = 10;
+	        	   	a[deal3] = 10;
 	        	}
 	        	if(a[deal3]==12){
-	        	    deal3 = 10;
+	        	    a[deal3] = 10;
 	        	    }
 	        	if(a[deal3]==13){
-	        	    deal3 = 10;
+	        	    a[deal3] = 10;
 	        	    }
 	            if(a[deal3]==14){
 	        	   
-	        	    deal3 = 11;
+	        	    a[deal3] = 11;
 	        	    }
+	        	    cout<<"The dealer decided to hit and card value is now "<<dealercardsum<<endl;
 	        	    dealercardsum += deal3;
 	        	    if (dealercardsum > 21){
 	        	        money+=bet;
@@ -192,17 +193,18 @@ y++;
 	       int deal4 = a[rand()%11];//randomizing card number
 y++;
 	            	if (a[deal4]==11){
-	        	   	deal4 = 10;
+	        	   	a[deal4] = 10;
 	        	}
 	        	if(a[deal4]==12){
-	        	    deal4 = 10;
+	        	    a[deal4] = 10;
 	        	    }
 	        	if(a[deal4]==13){
 	        	    deal4 = 10;
 	        	    }
 	            if(a[deal4]==14){
-	        	    deal4 = 11;
+	        	    a[deal4] = 11;
 	        	    }
+	        	    cout<<"The dealer decided to hit and card value is now "<<dealercardsum<<endl;
 	        	    dealercardsum += deal4;
 	        	    if (dealercardsum > 21){
 	        	        money+=bet;
@@ -214,16 +216,16 @@ y++;
 	              int card3 = a[rand()%11];//randomizing card number
 x++;
 	            	if (a[card3]==11){
-	        	   	card3 = 10;
+	        	   	a[card3] = 10;
 	        	}
 	        	if(a[card3]==12){
-	        	    card3 = 10;
+	        	    a[card3] = 10;
 	        	    }
 	        	if(a[card3]==13){
-	        	    card3 = 10;
+	        	    a[card3] = 10;
 	        	    }
 	            if(a[card3]==14){
-	        	    card3 = 11;
+	        	    a[card3] = 11;
 	        	    }
 	        	    youcardsum += card3;
 	        	    cout<<"You now have a total of "<<youcardsum<<endl;
@@ -236,16 +238,16 @@ x++;
 	              int card4 = a[rand()%11];//randomizing card number
 x++;
 	            	if (a[card4]==11){
-	        	   	card4 = 10;
+	        	   	a[card4] = 10;
 	        	}
 	        	if(a[card4]==12){
-	        	    card4 = 10;
+	        	    a[card4] = 10;
 	        	    }
 	        	if(a[card4]==13){
-	        	    card4 = 10;
+	        	    a[card4] = 10;
 	        	    }
 	            if(a[card4]==14){
-	        	    card4 = 11;
+	        	    a[card4] = 11;
 	        	    }
 	        	    youcardsum += card4;
 	        	    cout<<"You now have a total of "<<youcardsum<<endl;
@@ -259,7 +261,7 @@ x++;
 	             money+=bet;
 	             return 0;
 	             }
-	         if(youcardsum < dealercardsum){
+	         if(youcardsum > dealercardsum){
 	              cout<<"Lose\n";
 	             return 0;
 	             }
@@ -271,4 +273,3 @@ x++;
 	    }
 	return 0;
 	}
-}
